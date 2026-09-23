@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import NavCard from './components/NavCard'
 import QRModal from './components/QRModal'
+import GameHub from './components/GameHub'
+import GamePage from './components/GamePage'
+import Game2048 from './components/Game2048'
 import {
   IconBlog,
   IconDouyin,
@@ -9,6 +12,7 @@ import {
   IconGithub,
   IconSteam,
   IconLeetCode,
+  IconGame,
 } from './components/Icons'
 
 const DOUYIN_URL =
@@ -21,6 +25,7 @@ const LEETCODE_URL = 'https://leetcode.cn/u/hex-s'
 
 export default function App() {
   const [qrOpen, setQrOpen] = useState(false)
+  const [view, setView] = useState('nav') // nav | hub | snake | 2048
 
   return (
     <div className="relative min-h-screen">
@@ -28,6 +33,11 @@ export default function App() {
       <div className="bg-grid pointer-events-none absolute inset-0" aria-hidden="true" />
 
       <main className="relative mx-auto w-full max-w-3xl px-6 pb-24 pt-20 sm:pt-28">
+        {view === 'hub' && <GameHub onBack={() => setView('nav')} onSelect={(g) => setView(g)} />}
+        {view === 'snake' && <GamePage onBack={() => setView('hub')} />}
+        {view === '2048' && <Game2048 onBack={() => setView('hub')} />}
+        {view === 'nav' && (
+          <>
         {/* ---------- 头部 ---------- */}
         <header className="animate-fade-up text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-line bg-card/70 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.22em] text-[#9aa4bf]">
@@ -100,6 +110,14 @@ export default function App() {
             desc="展示二维码 · 扫码成为好友"
             onClick={() => setQrOpen(true)}
           />
+          <NavCard
+            index={7}
+            brand="game"
+            icon={<IconGame className="size-6" />}
+            label="小游戏"
+            desc="贪吃蛇 · 2048 · 摸鱼也要讲基本法"
+            onClick={() => setView('hub')}
+          />
         </div>
 
         {/* ---------- 底部 ---------- */}
@@ -107,6 +125,8 @@ export default function App() {
           <p>© 2026 · 构建于 React + Vite · 金色即正义</p>
           <p className="mt-2 opacity-60">把常用的入口放在一起，就是数字生活的最小单元</p>
         </footer>
+          </>
+        )}
       </main>
 
       <QRModal open={qrOpen} onClose={() => setQrOpen(false)} />

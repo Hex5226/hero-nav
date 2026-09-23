@@ -107,15 +107,54 @@ export function IconLeetCode(props) {
   )
 }
 
-/** 酷狗音乐：音符（简化） */
-export function IconKugou(props) {
-  const g = { id: 'ikg', colors: ['#2dd4a0', '#2ab8e6'] }
+/** 小游戏：游戏手柄（简约风） */
+export function IconGame(props) {
+  const g = { id: 'igm', colors: ['#f0b90b', '#ff7a18'] }
   return (
     <svg viewBox="0 0 24 24" fill="none" {...props} aria-hidden="true">
       <Defs g={g} />
-      <path d="M9.5 17.6V6.2c0-.42.28-.79.69-.9l6.8-1.62c.66-.16 1.31.3 1.31.98v11.7" stroke={`url(#${g.id})`} strokeWidth="1.9" strokeLinecap="round" />
-      <circle cx="7.2" cy="17.6" r="2.3" fill={`url(#${g.id})`} />
-      <circle cx="15.6" cy="14.6" r="2.3" fill={`url(#${g.id})`} />
+      <path
+        d="M7.6 7h8.8a5.4 5.4 0 0 1 5.36 6.2l-.66 4.4a2.35 2.35 0 0 1-4.08 1.2L14.6 16H9.4l-2.42 2.8a2.35 2.35 0 0 1-4.08-1.2l-.66-4.4A5.4 5.4 0 0 1 7.6 7z"
+        stroke={`url(#${g.id})`}
+        strokeWidth="1.7"
+        strokeLinejoin="round"
+      />
+      <path d="M8.2 9.6v3.4M6.5 11.3h3.4" stroke={`url(#${g.id})`} strokeWidth="1.7" strokeLinecap="round" />
+      <circle cx="16.2" cy="10.4" r="0.9" fill={`url(#${g.id})`} />
+      <circle cx="17.6" cy="12.6" r="0.9" fill={`url(#${g.id})`} />
+    </svg>
+  )
+}
+
+/** 贪吃蛇：像素方块蛇（深色实心 + 白色眼睛，S 形身体，游戏感强） */
+export function IconSnake(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" {...props} aria-hidden="true">
+      {/* 尾巴 */}
+      <rect x="12.6" y="12.6" width="4.6" height="4.6" rx="1.3" fill="#0e1116" opacity=".55" />
+      {/* 身体3 */}
+      <rect x="12.6" y="8" width="4.6" height="4.6" rx="1.3" fill="#0e1116" opacity=".75" />
+      {/* 身体2 */}
+      <rect x="8" y="8" width="4.6" height="4.6" rx="1.3" fill="#0e1116" opacity=".9" />
+      {/* 身体1 */}
+      <rect x="8" y="3.4" width="4.6" height="4.6" rx="1.3" fill="#0e1116" />
+      {/* 蛇头 */}
+      <rect x="3" y="3" width="5.2" height="5.2" rx="1.7" fill="#0e1116" />
+      {/* 眼睛 */}
+      <circle cx="4.55" cy="5.05" r="0.65" fill="#fff" />
+      <circle cx="6.55" cy="5.05" r="0.65" fill="#fff" />
+    </svg>
+  )
+}
+
+/** 2048：四宫格数字块（深色实心，在浅色渐变徽章上高对比） */
+export function Icon2048(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" {...props} aria-hidden="true">
+      <rect x="4" y="4" width="7.2" height="7.2" rx="1.6" fill="#0e1116" opacity=".95" />
+      <rect x="12.8" y="4" width="7.2" height="7.2" rx="1.6" fill="#0e1116" opacity=".7" />
+      <rect x="4" y="12.8" width="7.2" height="7.2" rx="1.6" fill="#0e1116" opacity=".7" />
+      <rect x="12.8" y="12.8" width="7.2" height="7.2" rx="1.6" fill="#0e1116" opacity=".45" />
     </svg>
   )
 }

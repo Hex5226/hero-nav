@@ -41,10 +41,10 @@ const BRAND = {
     glow: '0 0 0 1px rgba(255,161,22,.3), 0 18px 44px -16px rgba(255,161,22,.42)',
     bar: 'from-[#ffa116] to-[#f26d21]',
   },
-  kugou: {
-    chip: 'bg-[#2dd4a0]/10',
-    glow: '0 0 0 1px rgba(45,212,160,.3), 0 18px 44px -16px rgba(45,212,160,.42)',
-    bar: 'from-[#2dd4a0] to-[#2ab8e6]',
+  game: {
+    chip: 'bg-gold/10',
+    glow: '0 0 0 1px rgba(240,185,11,.32), 0 18px 44px -16px rgba(240,185,11,.45)',
+    bar: 'from-gold to-[#ff7a18]',
   },
 }
 
